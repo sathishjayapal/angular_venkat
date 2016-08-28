@@ -1,0 +1,19 @@
+{
+  "name": "angular_venkat",
+  "homepage": "https://github.com/sathishjayapal/angular_venkat",
+  "authors": [
+    "Sathish Jayapal <sjayapal@skminfotech.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}
