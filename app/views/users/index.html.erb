@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
-<p>The value is {{1+1}}</p>
-<input ng-model="firstName" ng-model-options="{updateOn: 'blur'}"/>
-<p>Hi {{firstName}}</p>
-
-</br>
+<div ng-app="myapp">
+  <p id="notice"><%= notice %></p>
+  <h1>Listing Users</h1>
+  <p>The value is {{1+1}}</p>
+  <input ng-model="firstName" ng-model-options="{updateOn: 'blur'}"/>
+  <p>Hi {{firstName}}</p>
+  <div ng-controller="MyController as myController">
+    Hello {{ myController.greet() }}
+  </div>
+</div>
