@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<div ng-app="todoapp">
+  <div ng-controller="TaskController as taskController">
+   Total tasks to do is: {{ taskController.tasks.length }}
+
+  </div>
+</div>
+<h1>Listing Tasks</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Taskname</th>
+    <th>Taskdescr</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.taskName %></td>
+        <td><%= task.taskDescr %></td>
+        <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>
