@@ -1,25 +1,29 @@
-<%= form_for(@task) do |f| %>
-  <% if @task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+<div ng-app="todoapp">
+  <div ng-controller="TaskController as mySaveTaskController">
+    <%= form_for(@task) do |f| %>
+        <% if @task.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-      <ul>
-      <% @task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+              <ul>
+                <% @task.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
 
-  <div class="field">
-    <%= f.label :taskName %><br>
-    <%= f.text_field :taskName %>
+        <div class="field">
+          <%= f.label :taskName %><br>
+          <%= f.text_field :taskName %>
+        </div>
+        <div class="field">
+          <%= f.label :taskDescr %><br>
+          <%= f.text_field :taskDescr %>
+        </div>
+        <div class="actions">
+          <input type="submit" ng-click="mySaveTaskController.addTask();" value="Create"/>
+        </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :taskDescr %><br>
-    <%= f.text_field :taskDescr %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
